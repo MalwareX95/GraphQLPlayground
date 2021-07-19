@@ -46,7 +46,14 @@ namespace GraphQLPlayground
                     {
                         Id = 1,
                         AuthorId = 1,
-                        Title = "A"}
+                        Title = "A"
+                    },
+                    new Book
+                    {
+                        Id = 2,
+                        AuthorId = 1,
+                        Title = "B"
+                    },
                 });
 
         }

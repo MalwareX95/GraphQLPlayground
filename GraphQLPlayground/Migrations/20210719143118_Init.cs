@@ -49,6 +49,11 @@ namespace GraphQLPlayground.Migrations
                 columns: new[] { "Id", "AuthorId", "Title" },
                 values: new object[] { 1, 1, "A" });
 
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "AuthorId", "Title" },
+                values: new object[] { 2, 1, "B" });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",
                 table: "Books",

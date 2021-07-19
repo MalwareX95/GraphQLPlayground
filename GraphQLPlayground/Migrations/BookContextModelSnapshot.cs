@@ -44,6 +44,12 @@ namespace GraphQLPlayground.Migrations
                             Id = 1,
                             AuthorId = 1,
                             Title = "A"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthorId = 1,
+                            Title = "B"
                         });
                 });
 

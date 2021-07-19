@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GraphQLPlayground.Migrations
 {
     [DbContext(typeof(BookContext))]
-    [Migration("20210708201329_Init")]
+    [Migration("20210719143118_Init")]
     partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,12 @@ namespace GraphQLPlayground.Migrations
                             Id = 1,
                             AuthorId = 1,
                             Title = "A"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthorId = 1,
+                            Title = "B"
                         });
                 });
 

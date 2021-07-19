@@ -15,10 +15,9 @@ namespace GraphQLPlayground.Types
             descriptor
                 .Field(x => x.Books)
                 .UseDbContext<BookContext>()
-                .UsePaging()
-                //.UseProjection()
-                .UseFiltering()
-                .UseSorting();
+                //.UsePaging()
+                .UseFiltering();
+                //.UseSorting();
 
             descriptor.Description("Author of the book");
         }

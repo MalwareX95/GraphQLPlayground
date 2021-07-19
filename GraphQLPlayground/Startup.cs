@@ -17,7 +17,7 @@ namespace GraphQLPlayground
         {
             services
                .AddPooledDbContextFactory<BookContext>((s, o) => o
-                    .UseSqlServer("Data Source=DESKTOP-CL67NDT;Initial Catalog=Books;Integrated Security=True")
+                    .UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Books;Integrated Security=True")
                     .LogTo(Console.WriteLine))
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
@@ -43,8 +43,13 @@ namespace GraphQLPlayground
             {
                 app.UseDeveloperExceptionPage();
             }
+            using (var scope = app.ApplicationServices.CreateScope())
+            using (var context = scope.ServiceProvider.GetRequiredService<IDbContextFactory<BookContext>>().CreateDbContext())
+            {
+                context.Database.Migrate();
+            }
 
-            app.UseRouting();
+                app.UseRouting();
             app.UseWebSockets();
             app.UseEndpoints(endpoints =>
             {
